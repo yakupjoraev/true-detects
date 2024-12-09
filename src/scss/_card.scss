@@ -1,0 +1,274 @@
+.cards {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 12px;
+    row-gap: 12px;
+    flex-wrap: wrap;
+    transition: all 0.2s linear;
+
+    & * {
+        transition: all 0.2s linear;
+    }
+
+    @media (max-width: $breakpoint1024) {
+        &.grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4px;
+            row-gap: 4px;
+
+            .card {
+                padding-right: 10px;
+            }
+
+            .card__name {
+                font-size: 11px;
+            }
+
+            .card__subname {
+                font-size: 16px;
+            }
+
+            .card__sum {
+                font-size: 16px;
+            }
+
+            .card__percents {
+                column-gap: 4px;
+            }
+
+            .card__percent {
+                font-size: 10px;
+            }
+
+            .card__graphik {
+                img {
+                    min-height: 50px;
+                }
+            }
+
+            .card__actions {
+                right: 4px;
+                top: 8px;
+            }
+
+            .card__info {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                grid-column: span 2;
+            }
+
+            .card__info-sums {
+                display: flex;
+                align-items: center;
+                column-gap: 4px;
+                justify-content: space-between;
+                width: 100%;
+                line-height: 100%;
+            }
+        }
+
+        &.list {}
+
+        &.tile {
+            .card {
+                grid-template-columns: repeat(1, 1fr);
+                padding: 10px;
+            }
+
+            .card__column {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                column-gap: 40px;
+            }
+
+            .card__sum {
+                line-height: 120%;
+            }
+
+            .card__graphik {
+                max-width: 100%;
+
+                img {
+                    max-height: 50px;
+
+                }
+            }
+
+            .card__actions {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .card__info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .card__info-tokens {
+                display: flex;
+                flex-direction: column;
+                row-gap: 4px;
+                width: fit-content;
+                line-height: 100%;
+            }
+
+            .card__info-sums {
+                display: flex;
+                flex-direction: column;
+                row-gap: 4px;
+                width: fit-content;
+                line-height: 100%;
+            }
+        }
+    }
+
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 374px;
+    height: 160px;
+    padding: 16px 36px 12px 12px;
+    background-color: #1c1c1c;
+    border-radius: 4px;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint1024) {
+        width: 100%;
+    }
+
+    // .card__column
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 20px;
+    }
+
+    // .card__naiming
+
+    &__naiming {}
+
+    // .card__name
+
+    &__name {
+        font-size: 13px;
+        color: #929292;
+    }
+
+    // .card__subname
+
+    &__subname {
+        font-size: 20px;
+        color: var(--white);
+    }
+
+    // .card__sums
+
+    &__sums {}
+
+    // .card__sum
+
+    &__sum {
+        font-size: 20px;
+        color: var(--white);
+    }
+
+    // .card__percents
+
+    &__percents {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+
+    // .card__percents--green
+
+    &__percents--green {
+        color: #089949;
+    }
+
+    // .card__percent
+
+    &__percent {
+        display: flex;
+        align-items: center;
+        column-gap: 2px;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    // .card__graphik
+
+    &__graphik {
+        max-width: 162px;
+        width: 100%;
+        margin: auto 0;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // .card__actions
+
+    &__actions {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+    }
+
+    // .card__percents--red
+
+    &__percents--red {
+        color: #f23645;
+    }
+
+    // .card__info
+
+    &__info {
+        display: none;
+    }
+
+    // .card__info-tokens
+
+    &__info-tokens {
+        display: none;
+        font-weight: 300;
+        font-size: 10px;
+        color: #929292;
+    }
+
+    // .card__info-sums
+
+    &__info-sums {
+        display: none;
+        font-weight: 300;
+        font-size: 10px;
+        color: #929292;
+    }
+}

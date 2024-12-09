@@ -1,0 +1,122 @@
+.nav {
+
+    // .nav__list
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        @media (max-width: $breakpoint1024) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 12px;
+
+            &--bottom {
+                display: none;
+            }
+        }
+    }
+
+    // .nav__item
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &.active {
+            .nav__link {
+                span {
+                    color: var(--primary);
+                }
+
+                img {
+                    filter: invert(51%) sepia(45%) saturate(6850%) hue-rotate(184deg) brightness(99%) contrast(96%)
+                }
+
+                @media (max-width: $breakpoint1024) {
+                    font-weight: 700;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+                background-color: var(--primary);
+                transition: 0.3s all ease;
+
+                @media (max-width: $breakpoint1024) {
+                    content: none;
+                }
+            }
+        }
+
+        &.disabled {
+            opacity: 0.3;
+        }
+    }
+
+    // .nav__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        column-gap: 18px;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        color: #929292;
+
+        span {
+            overflow: hidden;
+            margin-top: 1px;
+            transition: 0.2s all linear;
+        }
+
+        @media (hover:hover) {
+            &:hover {
+                span {
+                    color: var(--primary);
+                }
+
+                img {
+                    filter: invert(51%) sepia(45%) saturate(6850%) hue-rotate(184deg) brightness(99%) contrast(96%)
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint1024) {
+            flex-direction: column;
+            font-size: 11px;
+            row-gap: 2px;
+            white-space: nowrap;
+
+            span {
+                margin: 0;
+            }
+        }
+    }
+
+    // .nav__line
+
+    &__line {
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: #252525;
+        margin: 36px -20px;
+
+        @media (max-width: $breakpoint1024) {
+            display: none;
+        }
+    }
+}

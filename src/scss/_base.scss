@@ -1,0 +1,115 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .main {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+
+    @media (max-width: $breakpoint1024) {
+      padding-bottom: 70px;
+    }
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 24px 20px 24px 36px;
+
+  @media (max-width: $breakpoint1024) {
+    padding: 10px;
+  }
+
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+  padding: 18px 20px;
+  background-color: var(--primary);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  outline: 0;
+  font-family: var(--second-family);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s all ease;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--secondary);
+      background-color: var(--secondary);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  &:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+  }
+
+  &:focus {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+  }
+}
+
+.btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  width: 100%;
+  padding: 18px 20px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+  outline: 0;
+  font-family: var(--second-family);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s all ease;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--secondary);
+      background-color: var(--secondary);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    user-select: none;
+    border-color: var(--borders);
+    background-color: var(--borders);
+  }
+
+  &:active {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+  }
+
+  &:focus {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+  }
+}

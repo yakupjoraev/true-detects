@@ -1,0 +1,57 @@
+// ************************ Модальное окно ************************ //
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(4px);
+    background: rgba(13, 12, 12, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #0d0c0c;
+    margin: 10% auto;
+    padding: 40px 36px;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    width: 96%;
+    max-width: 574px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    @media (max-width: $breakpoint768) {
+        padding: 50px 10px 20px 10px;
+    }
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
