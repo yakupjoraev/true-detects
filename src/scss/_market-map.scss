@@ -72,3 +72,30 @@
     }
 
 }
+
+.times--market {
+    @media (max-width: $breakpoint1024) and (orientation: landscape) {
+        position: absolute;
+        top: 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 300px);
+        margin: 0 auto;
+
+        .times__btns {
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media (max-width: 800px) and (orientation: landscape) {
+        left: 54%;
+    }
+
+    @media (max-width: 680px) and (orientation: landscape) {
+        top: 10px;
+
+        .times__btns {
+            flex-wrap: wrap;
+        }
+    }
+}

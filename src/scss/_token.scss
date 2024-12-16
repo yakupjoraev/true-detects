@@ -15,6 +15,8 @@
     // .token__info
 
     &__info {
+        width: 60%;
+
         .card__column {
             flex-direction: row;
             column-gap: 20px;
@@ -68,11 +70,12 @@
 
 }
 
-.filters {
+.token .filters {
     @media (max-width: $breakpoint1024) {
         display: none;
     }
 }
+
 
 .token-desktop {
     display: grid;

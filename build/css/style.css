@@ -210,12 +210,10 @@ body.locked {
 }
 
 .wrapper .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: -webkit-min-content;
+  grid-template-columns: min-content;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -572,6 +570,7 @@ body.locked {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 100dvh;
+  width: 100%;
   padding: 40px 20px;
   background: -o-radial-gradient(50% 50%, 50% 50%, #171616 0%, #000 100%);
   background: radial-gradient(50% 50% at 50% 50%, #171616 0%, #000 100%);
@@ -690,6 +689,11 @@ body.locked {
 
 .nav__item.disabled {
   opacity: 0.3;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
 .nav__link {
@@ -901,6 +905,7 @@ body.locked {
 }
 
 .tabs__add {
+  text-transform: none;
   -webkit-column-gap: 4px;
      -moz-column-gap: 4px;
           column-gap: 4px;
@@ -1425,6 +1430,10 @@ body.locked {
   border-radius: 4px;
 }
 
+.token__info {
+  width: 60%;
+}
+
 .token__info .card__column {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -1776,6 +1785,9 @@ body.locked {
 
 @media (max-width: 1024.98px) {
   .wrapper .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding-bottom: 70px;
   }
 
@@ -2113,7 +2125,7 @@ body.locked {
     display: block;
   }
 
-  .filters {
+  .token .filters {
     display: none;
   }
 
@@ -2187,6 +2199,28 @@ body.locked {
 @media (max-width: 1024.98px) and (orientation: landscape) {
   .market-map__header {
     display: none;
+  }
+
+  .times--market {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: calc(100% - 300px);
+    margin: 0 auto;
+  }
+
+  .times--market .times__btns {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  .times--market {
+    left: 54%;
   }
 }
 
@@ -2262,6 +2296,17 @@ body.locked {
 
   .filters__row:has(.times--market) {
     display: block;
+  }
+}
+
+@media (max-width: 680px) and (orientation: landscape) {
+  .times--market {
+    top: 10px;
+  }
+
+  .times--market .times__btns {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 

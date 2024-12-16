@@ -5,11 +5,15 @@
   overflow: hidden;
 
   .main {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content;
+    // display: flex;
+    // align-items: flex-start;
     flex-grow: 1;
 
     @media (max-width: $breakpoint1024) {
+      display: flex;
       padding-bottom: 70px;
     }
   }
