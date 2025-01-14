@@ -1577,6 +1577,10 @@ body.locked {
   outline: 0;
 }
 
+.token__action[hidden] {
+  display: none;
+}
+
 .token-desktop {
   display: grid;
   grid-template-columns: 300px 1fr 320px;
@@ -1847,6 +1851,9 @@ body.locked {
   .chart {
     grid-column: span 2;
     overflow: hidden;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 
   .chart .orders__graph img {
@@ -2411,6 +2418,10 @@ body.locked {
   }
 
   .start__btn {
+    max-width: 100%;
+  }
+
+  .start__inputs {
     max-width: 100%;
   }
 }

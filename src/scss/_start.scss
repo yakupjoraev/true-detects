@@ -103,6 +103,10 @@
     max-width: 354px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: $breakpoint480) {
+      max-width: 100%;
+    }
   }
 
   // .start__input
